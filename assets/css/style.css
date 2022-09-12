@@ -1,0 +1,22 @@
+#fiveDayBlock {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#fiveDayBlock h4 {
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+
+    #fiveDayBlock .container-fluid {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    #fiveDayBlock .container-fluid {
+        width: 20%;
+    }
+}

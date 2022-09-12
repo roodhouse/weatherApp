@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="text-center bg-primary bg-gradient text-white py-3">Weather Dashboard</h1>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>Search for a City:</h2>
+                <form id="searchForm">
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Austin">
+                    <button type="submit" class="btn btn-primary col-12 my-3">Search</button>
+                </form>
+
+                <hr class="my-0 pb-3 border-top border-dark border-3">
+
+                <button class="bg-secondary col-12 py-1 mb-3 rounded">Austin</button>
+                <button class="bg-secondary col-12 py-1 mb-3 rounded">Chicago</button>
+                <button class="bg-secondary col-12 py-1 mb-3 rounded">New York</button>
+                <button class="bg-secondary col-12 py-1 mb-3 rounded">Orlando</button>
+                <button class="bg-secondary col-12 py-1 mb-3 rounded">San Francisco</button>
+                <button class="bg-secondary col-12 py-1 mb-3 rounded">Seattle</button>
+                <button class="bg-secondary col-12 py-1 mb-3 rounded">Denver</button>
+                <button class="bg-secondary col-12 py-1 mb-3 rounded">Atlanta</button>
+
+            </div>
+
+            <div class="container-fluid col-sm-8">
+                <div class="row">
+                    <div id="cityBlock" class="col-12 bg-danger">
+                        <h3 id="cityName">Atlanta (3/30/2021) <i class="fa-solid fa-cloud"></i></h3>
+                        <p>Temp: <span id="cityTemp">74.01</span>°F</p>
+                        <p>Wind: <span id="cityWind">6.67</span> MPH</p>
+                        <p>Humidity: <span id="cityHumidity">46</span> %</p>
+                        <p class="cityUv">UV Index: <span class="bg-success" id="uvSpan">0.47</span></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="fiveDayBlock" class="col-12 bg-success">
+                        <h4 class="my-2">5-Day Forecast:</h4>
+
+                        <div class="container-fluid col-sm-12 my-2">
+                            <div class="row gx-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 id="dayZeroDate" class="card-title">3/31/2021</h5>
+                                        <h6 class="card-subtitle"><i class="fa-solid fa-cloud"></i></h6>
+                                        <p class="card-text">Temp: <span id="dayZeroTemp">73.72</span> °F</p>
+                                        <p class="card-text">Wind: <span id="dayZeroWind">9.53</span> MPH</p>
+                                        <p class="card-text">Humidity: <span id="dayZeroHumidity">66</span> %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid col-sm-12 my-2">
+                            <div class="row gx-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 id="dayOneDate" class="card-title">4/1/2021</h5>
+                                        <h6 class="card-subtitle"><i class="fa-solid fa-cloud"></i></h6>
+                                        <p class="card-text">Temp: <span id="dayOneTemp">73.72</span> °F</p>
+                                        <p class="card-text">Wind: <span id="dayOneWind">9.53</span> MPH</p>
+                                        <p class="card-text">Humidity: <span id="dayOneHumidity">66</span> %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid col-sm-12 my-2">
+                            <div class="row gx-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 id="dayTwoDate" class="card-title">4/2/2021</h5>
+                                        <h6 class="card-subtitle"><i class="fa-solid fa-cloud"></i></h6>
+                                        <p class="card-text">Temp: <span id="dayTwoTemp">73.72</span> °F</p>
+                                        <p class="card-text">Wind: <span id="dayTwoWind">9.53</span> MPH</p>
+                                        <p class="card-text">Humidity: <span id="dayTwoHumidity">66</span> %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid col-sm-12 my-2">
+                            <div class="row gx-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 id="dayThreeDate" class="card-title">4/3/2021</h5>
+                                        <h6 class="card-subtitle"><i class="fa-solid fa-cloud"></i></h6>
+                                        <p class="card-text">Temp: <span id="dayThreeTemp">73.72</span> °F</p>
+                                        <p class="card-text">Wind: <span id="dayThreeWind">9.53</span> MPH</p>
+                                        <p class="card-text">Humidity: <span id="dayThreeHumidity">66</span> %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid col-sm-12 my-2">
+                            <div class="row gx-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 id="dayFourDate" class="card-title">4/4/2021</h5>
+                                        <h6 class="card-subtitle"><i class="fa-solid fa-cloud"></i></h6>
+                                        <p class="card-text">Temp: <span id="dayFourTemp">73.72</span> °F</p>
+                                        <p class="card-text">Wind: <span id="dayFourWind">9.53</span> MPH</p>
+                                        <p class="card-text">Humidity: <span id="dayFourHumidity">66</span> %</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
+
+<!-- begin connect of api etc, ck mini project for sample -->
